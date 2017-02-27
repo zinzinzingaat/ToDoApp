@@ -37,6 +37,13 @@ def update
   end
 end
 
+def destroy
+  @todos = Todo.find(params[:id])
+  flash[:notice] = "Todo item was successfully deleted"
+  @todos.destroy
+  redirect_to todos_path
+end
+
 private
 def todo_params
   params.require(:todo).permit(:name,:description)
