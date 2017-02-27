@@ -3,7 +3,7 @@
 <% if @todos.errors.any? %>
 <h2>The following errors occured</h2>
 <ul>
-  <% @todos.errors.any_messages.each do |k,msg| %>
+  <% @todos.errors.full_messages.each do |msg| %>
   <li><%= msg %></li>
   <% end %>
 </ul>
