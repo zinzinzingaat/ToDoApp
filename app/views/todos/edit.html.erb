@@ -1,0 +1,23 @@
+<h1>Edit this todo</h1>
+
+<% if @todos.errors.any? %>
+<h2>The following errors occured</h2>
+<ul>
+  <% @todos.errors.any_messages.each do |k,msg| %>
+  <li><%= msg %></li>
+  <% end %>
+</ul>
+<% end %>
+<%= form_for @todos do |td|%>
+<p>
+<%= td.label :name %> <br>
+<%= td.text_field :name %>
+</p>
+<p>
+<%= td.label :description %> <br>
+<%= td.text_area :description %>
+</p>
+<p>
+  <%= td.submit %>
+</p>
+<% end %>
